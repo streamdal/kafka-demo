@@ -1,0 +1,22 @@
+#### RSVPS by event_id
+
+from(bucket: "rsvp")
+  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+  |> filter(fn: (r) => r["_measurement"] == "event")
+  |> filter(fn: (r) => r["_field"] == "response")
+  |> group(columns: ["event_id"])
+  |> sum()
+  |> group()
+  |> top(n:10, columns: ["_value"])
+
+
+### RSVPS by state 
+
+from(bucket: "rsvp")
+  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+  |> filter(fn: (r) => r["_measurement"] == "event")
+  |> filter(fn: (r) => r["_field"] == "response")
+  |> group(columns: ["group_state"])
+  |> sum()
+  |> group()
+  |> top(n:10, columns: ["_value"])
