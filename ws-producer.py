@@ -11,7 +11,6 @@ def write_topics(hsb_url, topic):
 
 def on_message(wsapp, message):
     producer = kafka.KafkaProducer(bootstrap_servers='127.0.0.1:9092', client_id='producer')
-    print(message)
     producer.send('rsvps', message.encode('utf-8'))
 
 topic='rsvps'
