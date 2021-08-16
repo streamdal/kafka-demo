@@ -26,14 +26,10 @@ def influx_connect(token, url):
   client = InfluxDBClient(url=url, token=token)
   return client
 
-#def influx_write(client, data, bucket, org):
-#  ## Influx settings
-#  write_api = client.write_api(write_options=SYNCHRONOUS)
-#  write_api.write(bucket, org, data)
 
 #Influx
 url="http://127.0.0.1:8086"
-token="bNCydUmEkAkxtW-dmtfc6WRJnRXSRiZapkAqlii3xQtQBrULO1bwPr7OlgkCpmJdDcE1p38NcjB0fRiDMSiX8Q=="
+token="changeme"
 
 #Kafka
 topic='rsvps'
@@ -45,5 +41,3 @@ bucket = "rsvp"
 #functions
 client=influx_connect(token, url)
 data=consume(topic, kafka_url, bucket, org)
-#influx_write(client, data, bucket, org)
-#write_topics(kafka_url, topic)

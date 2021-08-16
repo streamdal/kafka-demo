@@ -20,5 +20,5 @@ A quick demo on how to work kafka and real time data. Accompanies a youtube vide
 * Setup InfluxDb http//:127.0.0.1:8086
 * Setup Grafana http://127.0.0.1:3000
 
-### Youtube Vidoe
-* Place holder
+### Youtube Video
+* [YOUTUBE](https://www.youtube.com/watch?v=kX0hSH_7hds)
